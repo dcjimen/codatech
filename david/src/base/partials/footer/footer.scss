@@ -1,0 +1,71 @@
+@import "../../scss/general/vars";
+@import "../../scss/general/mixins";
+
+//Small Mobile
+@media (min-width: $smallMobile) and (max-width: $mobile) {
+
+	.icon-footer-container {
+		display: block;
+		width: $fullSize;
+		align-items: $centerMode;
+		font-size: $vw3;
+	}
+}
+
+//Mobile
+@media (min-width: $mobile) {
+
+	.icon-footer-container {
+		display: flex;
+		width: $fullSize;
+		align-items: $centerMode;
+	}
+}
+
+footer {
+	background-color: $black;
+	height: $pixel100;
+	margin-top: $margin8;
+}
+
+.footer-container {
+	display: $flex;
+	height: $fullSize;
+    align-items: $centerMode;
+    margin: $margin3;
+}
+
+.nav-footer-container {
+	display: $flex;
+	width: $fullSize;
+}
+
+.nav-footer-container nav {
+	width: $fullSize;
+}
+
+.nav-footer-list-options {
+	display: $flex;
+	justify-content: $spaceAr;
+	align-items: $centerMode;
+}
+
+.icon-footer-container div a {
+	color: $white;
+	text-decoration: $none;
+}
+
+.icon-footer-container div {
+	margin-left: 3%;
+}
+
+.social-media-container {
+	display: $flex;
+	width: $fullSize;
+    justify-content: $end;
+    list-style: $none;
+}
+
+.social-media-container li{
+	margin-right: $margin3;
+}

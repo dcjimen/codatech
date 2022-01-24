@@ -1,0 +1,293 @@
+@import "../../scss/general/vars";
+@import "../../scss/general/mixins";
+@import "../../scss/general";
+
+//Small Mobile
+@media (min-width: $smallMobile) and (max-width: $mobile) {
+
+	.slide-page {
+		text-align: $centerMode;
+		position: $absolute;
+		bottom: $vw1;
+		width: $fullSize;
+	}
+
+	.title-news {
+		font-size: $vw4;
+		width: $percent100;
+	}
+
+	.description-news {
+		text-align: $centerMode;
+		font-size: $vw3;
+		width: $percent80;
+		margin-bottom: $percent2;
+	}
+
+	.news-grid-container {
+		display: $block;
+	}
+
+	.news-work-container {
+		width: $percent80;
+		color: $white;
+		position: $relative;
+	}
+
+	.txt-title-work {
+		position: $absolute;
+		bottom: $vw11;
+		font-size: $vw5;
+		left: $vw6;
+	}
+
+	.txt-subtitle-work {
+		position: $absolute;
+		bottom: $vw2;
+		line-height: 2;
+		left: $vw6;
+		text-align: $leftMode;
+		width: $percent90;
+		font-size: $vw2;
+	}
+
+	.news-nature-container {
+		width: $percent80;
+		background-color: $natureContainer;
+		margin-top: $margin3;
+	}
+
+	.title-experiences {
+		font-size: $vw4;
+		font-weight: $bold;
+	}
+
+	.description-experiences {
+		line-height: 2;
+		font-size: 3vw;
+	}
+
+	.bttn-read-more {
+		padding: 1vw;
+		background: aqua;
+		border-radius: 40px;
+		border: 0px;
+		font-weight: bold;
+		width: 17vw;
+		font-size: 2vw;
+		cursor: pointer;
+}
+	}
+
+//Mobile
+@media (min-width: $mobile) {
+
+	.slide-page {
+		text-align: $centerMode;
+		position: $absolute;
+		bottom: $vw1;
+		width: $fullSize;
+	}
+
+	.title-news {
+		text-align: $centerMode;
+		font-size: $vw2;
+		width: $percent70;
+	}
+
+	.description-news {
+		text-align: $centerMode;
+		font-size: $vw1Half;
+		width: $percent70;
+		margin-bottom: $percent2;
+	}
+
+	.news-grid-container {
+		display: $flex;
+		justify-content: $spaceAr;
+	}
+
+	.news-work-container {
+		width: $percent55;
+		color: $white;
+		position: $relative;
+		height: fit-content;
+	}
+
+	.txt-title-work {
+		position: $absolute;
+		bottom: $vw4;
+		font-size: $vw2;
+		left: $vw4;
+	}
+
+	.txt-subtitle-work {
+		position: $absolute;
+		bottom: $vw0;
+		line-height: 2;
+		left: $vw4;
+		text-align: $leftMode;
+		width: $percent65;
+		font-size: $vw1;
+	}
+
+	.news-nature-container {
+		width: $percent38;
+		background-color: $natureContainer;
+	}
+
+	.title-experiences {
+		font-size: $vw2;
+		font-weight: $bold;
+	}
+
+	.description-experiences {
+		line-height: 2;
+		font-size: 1vw;
+	}
+
+	.bttn-read-more {
+		padding: 1vw;
+		background: aqua;
+		border-radius: 40px;
+		border: 0px;
+		font-weight: bold;
+		width: 10vw;
+		font-size: 1vw;
+		cursor: pointer;
+	}
+}
+
+@media (min-width: $mobile) and (max-width: $tablet) {
+	
+
+	
+}
+
+//Tablet
+@media (min-width: $tablet) {
+
+}
+
+.work {
+	display: $none;
+}
+.digital {
+	display: $none;
+}
+
+.slider-container {
+	width: $fullSize;
+	position: $relative;
+	margin: $auto;
+}
+
+.previous, .next {
+	cursor: $pointer;
+	position: $absolute;
+	top: $percent50;
+	width: $auto;
+	padding: $pixel16;
+	color: $white;
+	font-weight: $bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: $none;
+	background-color: $aqua;
+}
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.previous:hover, .next:hover {
+  	background-color: rgb(86, 231, 231);	
+}
+
+.text {
+	color: $greyNews;
+	font-size: $vw4;
+	width: $percent80;
+	position: $absolute;
+	top: $percent40;
+	left: $percent50;
+	transform: translate(-50%, -50%);
+	text-align: $centerMode;
+}
+
+.subText {
+	color: $greyNews;
+	font-size: $vw3;
+	width: $percent80;
+	position: $absolute;
+	top: $percent48;
+	left: $percent50;
+	transform: translate(-50%, -50%);
+	text-align: $centerMode;
+}
+
+.line-slide {
+	cursor: $pointer;
+	height: $pixel5;
+	width: $vw7;
+	background-color: $whiteGrey;
+	display: $inlineBlock;
+	transition: background-color 0.6s ease;
+    text-align: $centerMode;
+    color: $greyNews;
+    font-size: $pixel15;
+    left: $percent50;
+    bottom: $percent0;
+	margin: $pixel8;
+}
+
+.active, .line-slide:hover {
+  	background-color: $greyImageSlide;
+}
+
+/* Fading animation */
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@-webkit-keyframes slide {
+	from {opacity: .4} 
+	to {opacity: 1}
+}
+
+@keyframes slide {
+	from {opacity: .4} 
+	to {opacity: 1}
+}
+
+.news-section {
+	background-color: $white;
+	text-align: -webkit-center;
+}
+
+.news-container {
+	margin-top: $margin5;
+	text-align: $centerMode;
+	font-size: $font20;
+	color: $grey;
+}
+
+.clock-date-container {
+	text-align: $leftMode;
+	padding: $percent5;
+}
+
+.clock-text {
+	display: $flex;
+	width: $fullSize;
+	color: $greyClock;
+	height: $pixel25;
+}
+
+.clock-text p {
+	margin-left: $margin1;
+}

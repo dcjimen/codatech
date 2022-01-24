@@ -1,0 +1,240 @@
+$flex: flex;
+$spaceAr: space-around;
+$auto: auto;
+$inlineBlock: inline-block;
+
+
+//Pantalla pequeña
+$smallMobile: 330px;
+
+//Movil horizontal y tablet vertical
+$mobile: 768px;
+
+//Tablet horizontal
+$tablet: 1024px;
+
+//Monitor
+$monitor: 1200px;
+
+//El header y footer
+$includeTopHeightSmallMobile: 130px;
+$includeTopHeightMobile: 150px;
+$includeTopHeightTablet: 350px;
+
+
+
+
+//flex general lineal
+@mixin flexLine {
+    display: flex;
+    flex-direction: row;
+}
+
+//flex general espacio alrededor lineal
+@mixin flexLineAround {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+//flex general espacio entre componentes lineal
+@mixin flexLineBetween { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+//flex general columna
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+//flex general espacio alrededor columna
+@mixin flexColumnAround {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+//flex general espacio entre componentes columna
+@mixin flexColumnBetween {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+$pointer: pointer;
+$bold: bold;
+
+//Posiciones
+$relative: relative;
+$absolute: absolute;
+$fixed: fixed;
+$block: block;
+
+//Z-index
+$noIndex: 0;
+$hundredIndex: 100;
+$fullIndex: 1000;
+
+//Colores
+$black: #000000;
+$white: #FFFFFF;
+$blue: #3886CC;
+$green: #548235;
+$grey: #AEAEAE;
+$transparent: transparent;
+$none: none;
+$red: #ff0000;
+$aqua: aqua;
+$whiteGrey: #bbb;
+$greyNews: #f2f2f2;
+$greyImageSlide: #717171;
+$natureContainer: #F0F0F0;
+$greyClock: #B0B0B0;
+
+//Tamaños
+$fullSize: 100%;
+$eighthSize: 80%;
+$halfSize: 50%;
+$quarterSize: 30%;
+$noSize: 0%;
+
+//Espacios padding
+$padding0: 0%;
+$padding1: 1%;
+$padding2: 2%;
+$padding3: 3%;
+$padding4: 4%;
+$padding5: 5%;
+$padding6: 6%;
+$padding7: 7%;
+$padding8: 8%;
+$padding9: 9%;
+$padding10: 10%;
+$padding20: 20%;
+$padding30: 30%;
+$padding40: 40%;
+$padding50: 50%;
+$padding60: 60%;
+$padding70: 70%;
+$padding80: 80%;
+$padding90: 90%;
+
+//Espacios margin
+$margin0: 0%;
+$margin1: 1%;
+$margin2: 2%;
+$margin3: 3%;
+$margin4: 4%;
+$margin5: 5%;
+$margin6: 6%;
+$margin7: 7%;
+$margin8: 8%;
+$margin9: 9%;
+$margin10: 10%;
+$margin20: 20%;
+$margin30: 30%;
+$margin40: 40%;
+$margin50: 50%;
+$margin60: 60%;
+$margin70: 70%;
+$margin80: 80%;
+$margin90: 90%;
+
+//Pixeles 0-10
+$pixel0: 0px;
+$pixel1: 1px;
+$pixel2: 2px;
+$pixel3: 3px;
+$pixel4: 4px;
+$pixel5: 5px;
+$pixel6: 6px;
+$pixel7: 7px;
+$pixel8: 8px;
+$pixel9: 9px;
+$pixel10: 10px;
+$pixel15: 15px;
+$pixel16: 16px;
+$pixel20: 20px;
+$pixel25: 25px;
+$pixel30: 30px;
+$pixel40: 40px;
+$pixel50: 50px;
+$pixel60: 60px;
+$pixel70: 70px;
+$pixel75: 75px;
+$pixel80: 80px;
+$pixel90: 90px;
+$pixel100: 100px;
+$pixel200: 200px;
+
+//Porcentajes generales
+$percent0: 0%;
+$percent1: 1%;
+$percent2: 2%;
+$percent3: 3%;
+$percent4: 4%;
+$percent5: 5%;
+$percent6: 6%;
+$percent7: 7%;
+$percent8: 8%;
+$percent9: 9%;
+$percent10: 10%;
+$percent20: 20%;
+$percent30: 30%;
+$percent38: 38%;
+$percent40: 40%;
+$percent48: 48%;
+$percent50: 50%;
+$percent55: 55%;
+$percent60: 60%;
+$percent65: 65%;
+$percent70: 70%;
+$percent80: 80%;
+$percent90: 90%;
+$percent100: 100%;
+
+//Alineacion
+$leftMode: left;
+$centerMode: center;
+$rightMode: right;
+
+//Tamaño de fuente
+$font12: 12px;
+$font14: 14px;
+$font15: 15px;
+$font16: 16px;
+$font18: 18px;
+$font20: 20px;
+$font24: 24px;
+$font25: 25px;
+$font30: 30px;
+$font35: 35px;
+$font50: 50px;
+
+//Tamaño de fuente responsive
+$vw0: 0vw;
+$vw1: 1vw;
+$vw1Half: 1.5vw;
+$vw2: 2vw;
+$vw3: 3vw;
+$vw4: 4vw;
+$vw5: 5vw;
+$vw6: 6vw;
+$vw7: 7vw;
+$vw8: 8vw;
+$vw9: 9vw;
+$vw10: 10vw;
+$vw11: 11vw;
+
+//Borde redondeado botones
+$borderCircleButtons: 5px;
+
+//Sombras de caja
+$shadowBox: 0px 0px 20px 0px;
+
+//posiciones lineales
+$start: start;
+$end: end;

@@ -1,0 +1,299 @@
+//MIXINS
+
+@mixin fontSize($size, $line-height) {
+  font-size: $size + px;
+  line-height: $line-height + px;
+}
+
+
+
+@mixin flexbox($content, $align) {
+  display: flex;
+  justify-content: $content;
+  align-items: $align;
+}
+
+@mixin text($size, $line-height, $spacing) {
+  @include font-size($size);
+  line-height: $line-height + px;
+  letter-spacing: $spacing + px;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius:$radius;
+    border-radius: $radius;
+    background-clip: padding-box;  // stops bg color from leaking outside the border: 
+}
+
+@mixin border-top-radius($radius) {
+    -webkit-border-top-right-radius: $radius;
+    -moz-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    -moz-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    -moz-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+    -webkit-border-bottom-left-radius: $radius;
+    -moz-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin shadow ($x,$y,$blur,$color){
+    -webkit-box-shadow:$x $y $blur $color;
+    -moz-box-shadow:$x $y $blur $color;
+    box-shadow:$x $y $blur $color;
+}
+
+@mixin shadow-none (){
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    box-shadow:none;
+}
+
+@mixin shadow-inset ($x,$y,$blur, $size, $color){
+    -webkit-box-shadow:inset $x $y $blur $size $color;
+    -moz-box-shadow:inset $x $y $blur $size $color;
+    box-shadow:inset $x $y $blur $size $color;
+}
+
+@mixin shadow-double ($shadow, $inset){
+  -webkit-box-shadow:$shadow, $inset;
+  -moz-box-shadow:$shadow, $inset;
+  box-shadow:$shadow, $inset;
+}
+
+@mixin linear-gradient($from, $to){
+    background-color:$to;
+    background:-moz-linear-gradient($from,$to);
+    background-image:-o-linear-gradient($from,$to);
+    background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, $from), color-stop(1,$to));
+    background-image:-webkit-linear-gradient($from,$to);
+    background-image:-ms-linear-gradient($from,$to);
+    background-image:linear-gradient($from,$to);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
+
+@mixin linear-gradient-triple($color1,$color2,$color3){
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, $color1),
+        color-stop(0.5, $color2),
+        color-stop(1, $color3)
+    );
+    background-image: -o-linear-gradient(bottom, $color1 0%, $color2 50%, $color3 100%);
+    background-image: -moz-linear-gradient(bottom, $color1 0%, $color2 50%, $color3 100%);
+    background-image: -webkit-linear-gradient(bottom, $color1 0%, $color2 50%, $color3 100%);
+    background-image: -ms-linear-gradient(bottom, $color1 0%, $color2 50%, $color3 100%);
+    background-image: linear-gradient(to bottom, $color1 0%, $color2 50%, $color3 100%);
+}
+
+@mixin box-sizing(){
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+@mixin background-rgba($color, $opacity:0.2) {
+   background-color: rgba($color, $opacity);
+   background: rgba($color, $opacity);
+}
+
+@mixin opacity($opacity: $default-opacity) {
+   filter:         alpha(opacity=($opacity * 100));
+   -ms-filter:     "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($opacity * 100) + ")";
+   -moz-opacity:   $opacity;
+   -khtml-opacity: $opacity;
+   opacity:        $opacity;
+}
+
+@mixin centerer($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+// Example
+//    input.cajaTexto {
+//        @include placeholder{color:red; font-weight:bold; etc..}
+//    }
+@mixin placeholder {
+   &::-webkit-input-placeholder {
+    @content;
+   }
+
+   &:-moz-placeholder { // Firefox 18- 
+    @content;
+   }
+
+   &::-moz-placeholder {  // Firefox 19+ */
+    @content;
+   }
+
+   &:-ms-input-placeholder {
+    @content;
+   }
+}
+
+// Media queries 
+
+@mixin media-breakpoint-up($size){
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+
+@mixin text-truncate() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+//Adds font-size in rem & px
+//Value passed should be the expected px size
+//Default value 12 - can be customized to fit project
+@mixin font-size($sizeValue: 12 ){
+	font-size: $sizeValue + px; //fallback for old browsers
+	font-size: (0.0625 * $sizeValue) + rem;
+
+}
+
+//Adds line-height in rem & px
+//Value passed should be the expected px size
+//Default value 20 - can be customized to fit project
+@mixin line-height($heightValue: 20 ){
+	line-height: $heightValue + px; //fallback for old browsers
+	line-height: (0.0625 * $heightValue) + rem;
+}
+
+//Rhythm adds font-size and line-height in rem with a px fallback
+//Value passed should be the expected px size
+//Default values 12, 20 - can be customized to fit project
+@mixin rhythm($sizeValue: 12, $heightValue: 20) {
+	@include font-size($sizeValue);
+	@include line-height($heightValue);
+}
+
+
+
+
+
+@mixin transform($deg){
+  -webkit-transform: rotate($deg+deg);
+  -ms-transform: rotate($deg+deg);
+  transform: rotate($deg+deg);
+}
+
+
+
+
+
+
+
+
+
+
+////////////////FLUID TYPO
+
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+  }
+  
+  @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+  
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+      & {
+  
+        font-size: $min-font-size;
+        @media screen and (min-width: $min-vw) {
+          font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+        }
+  
+        @media screen and (min-width: $max-vw) {
+          font-size: $max-font-size;
+        }
+      }
+    }
+  }
+
+
+
+  //////esto es solo para tenera un posible segundo valor
+
+  @function strip-unit($value-2) {
+    @return $value-2 / ($value-2 * 0 + 1);
+  }
+  
+  @mixin fluid-type-2($min-vw-2, $max-vw-2, $min-font-size-2, $max-font-size-2) {
+    $u1-2: unit($min-vw-2);
+    $u2-2: unit($max-vw-2);
+    $u3-2: unit($min-font-size-2);
+    $u4-2: unit($max-font-size-2);
+  
+    @if $u1-2 == $u2-2 and $u1-2 == $u3-2 and $u1-2 == $u4-2 {
+      & {
+  
+        font-size: $min-font-size-2;
+        @media screen and (min-width: $min-vw-2) {
+          font-size: calc(#{$min-font-size-2} + #{strip-unit($max-font-size-2 - $min-font-size-2)} * ((100vw - #{$min-vw-2}) / #{strip-unit($max-vw-2 - $min-vw-2)}));
+        }
+  
+        @media screen and (min-width: $max-vw-2) {
+          font-size: $max-font-size-2;
+        }
+      }
+    }
+  }
+
+
+  /// google  fonts
+
+@mixin fonts($fontFamily, $fontWeight ){
+  font-family: $fontFamily;
+  font-weight: $fontWeight;
+}

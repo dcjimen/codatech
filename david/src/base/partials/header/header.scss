@@ -1,0 +1,92 @@
+@import "../../scss/general/vars";
+@import "../../scss/general/mixins";
+
+header {
+   
+}
+
+.header-container {
+	@include flexLineAround;
+	padding: $padding2;
+	align-items: $centerMode;
+	background-color: $black;
+}
+
+.arrow-option {
+	cursor: $pointer;
+}
+
+.list-menu {
+	display: $none;
+	list-style: $none;
+	z-index: $fullIndex;
+    background-color: $white;
+    width: $percent10;
+    height: $pixel200;
+    position: $absolute;
+    margin-top: $margin2;
+    padding: $padding0;
+	-webkit-box-shadow: 1px 6px 11px -1px rgba(0,182,186,0.85); 
+box-shadow: 1px 6px 11px -1px rgba(0,182,186,0.85);
+}
+
+.arrow-menu {
+	display: $none;
+	position: $absolute;
+    margin-top: $margin1;
+	-webkit-drop-shadow: 1px 6px 11px -1px rgba(0,182,186,0.85); 
+}
+
+.option-five-container:hover > .list-menu{
+	@include flexColumnAround;
+    align-items: $centerMode;
+}  
+
+.option-five-container:hover > .arrow-menu{
+	display: $block;
+}  
+
+.nav-container {
+	width: $percent60;
+}
+
+.nav-list-options {
+	@include flexLineAround;
+    list-style: $none;
+}
+
+
+
+.nav-list-options li a{
+	color: $white;
+	text-decoration: $none;
+}
+
+.option-five-container {
+	display: $flex;
+	text-align-last: $centerMode;
+	place-content: $spaceAr;
+}
+
+.language-container{
+	width: $percent7;
+	text-align: $centerMode;
+}
+
+.language-container a {
+	text-decoration: $none;
+	color: $white;
+	padding: $padding4;
+}
+
+.language-container a:focus {
+	background-color: $aqua;
+	color: $black;
+	font-weight: $bold;
+}
+
+.language-container a:hover {
+	background-color: $aqua;
+	color: $black;
+	font-weight: $bold;
+}

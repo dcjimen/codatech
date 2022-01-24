@@ -1,0 +1,18 @@
+@import "vendors/bootstrap/bootstrap";
+
+@import "general/vars";
+@import "general/mixins";
+@import "general/fonts";
+@import "general/icon-font";
+
+@import "general.scss";
+
+@import "../partials/header/header.scss";
+@import "../partials/main/main.scss";
+@import "../partials/footer/footer.scss";
+
+@import "../../components/block-my-wallets/block-my-wallets.scss";
+@import "../../components/block-login/block-login.scss";
+@import "../../components/block-help/block-help.scss";
+@import "../../components/block-cookies/block-cookies.scss";
+@import "../../components/block-dashboard/block-dashboard.scss";

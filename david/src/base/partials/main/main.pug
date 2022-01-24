@@ -1,0 +1,53 @@
+section
+  .slider-container
+    .images-slider.slide
+      img(src='../../images/atardecer-banner.jpg' width='100%')
+      h3.text El futuro de tu negocio en buenas manos
+    .images-slider.slide.digital
+      img(src='../../images/digital-banner.jpg' style='width:100%')
+      h3.text CodaTech y el mundo digital
+    .images-slider.slide.work
+      img(src='../../images/trabajo-banner.jpg' style='width:100%')
+      h3.text Pasión por el desarrollo
+    div
+    .slide-page
+      span.line-slide(onclick='currentImage(1)')
+      span.line-slide(onclick='currentImage(2)')
+      span.line-slide(onclick='currentImage(3)')
+    a.previous(onclick='moreImage(-1)') &#x276E;
+    a.next(onclick='moreImage(1)') &#x276F;
+section.news-section
+  .news-container
+    p Noticias
+  .title-news
+    h2 Lorem ipsum dolor sit amet
+  .description-news
+    p
+      | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      | Phasellus pretium venenatis fermentum.
+      | Maecenas vitae condimentum sapien.
+      | Nunc auctor ac arcu sed efficitur.
+  .news-grid-container
+    .news-work-container
+      div
+        img(width='100%' src='../../images/noticias-trabajo.jpg')
+      p.txt-title-work Así de fácil. Así de sencillo
+      p.txt-subtitle-work
+        | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        | Morbi molestie at lectus et blandit. Integer id lacinia nulla
+        | nec finibus nisi trisique in ex.
+    .news-nature-container
+      img(width='100%' src='../../images/noticias-naturaleza.png')
+      .clock-date-container
+        .clock-text
+          img(width='4%' src='../../images/reloj.png')
+          p 14 Noviembre
+        .title-experiences
+          p Creamos experiencias únicas para hacer crecer tu negocio
+        .description-experiences
+          p
+            | Lorem ipsum dolor sit amet, consectetur
+            | adipiscing elit morbi molestie at lectus
+            | et blandit. Integer id lacinia nulla.
+        .bttn-container
+          button.bttn-read-more LEER MÁS
